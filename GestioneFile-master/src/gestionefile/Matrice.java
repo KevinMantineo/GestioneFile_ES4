@@ -1,6 +1,7 @@
 package gestionefile;
 
-
+//Classe che rappresenta una matrice utilizzata per la cifratura di Vigenere.
+//Contiene metodi per impostare gli elementi della matrice, ottenere gli elementi e cifrare/decifrare testo.
 public class Matrice {
 
     char mv[][];
@@ -10,15 +11,16 @@ public class Matrice {
         this.mv = new char[26][26];
         this.verme = verme;
     }
-
+// Imposta un elemento nella matrice alla posizione specificata.
+// Il parametro R si riferisce alla riga della matrice invece C alla colonna
     public void setElemento(int r, int c, int el) {
         this.mv[r][c] = (char) el;
     }
-
+//Ottiene l'elemento presente nella posizione specificata della matrice.
     public char getElemento(int r, int c) {
         return mv[r][c];
     }
-
+//Stampa la matrice
     public void stampa() {
         int r = 0;
         int c = 0;
@@ -31,7 +33,9 @@ public class Matrice {
             System.out.print("\n");
         }
     }
-
+// Cifra una stringa utilizzando la matrice e la chiave specificata.
+// Fch è la stringa da cifrare e return restituisce la Stringa cifrata
+//Metodo di cifratura vigenere
     public String cifra(String fch){
         String fcf;
         int k,j,col,row;
@@ -59,7 +63,9 @@ public class Matrice {
 
         return(fcf);
     }
-
+// Cifra una stringa utilizzando la matrice e la chiave specificata.
+// Fcf è la stringa da decifrare e return restituisce la Stringa cifrata
+//Metodo di cifratura vigenere
 public String deCifra(String fcf){
         String fch="";
 
